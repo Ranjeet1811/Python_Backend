@@ -1,4 +1,4 @@
-## Assignment Scaffolding
+## Backend python assessment
 
 ***Code Navigation***
 
@@ -42,3 +42,13 @@ Make sure that all the api only logic should go in api layer (i.e. views.py) and
 Schema goes in the models/user.py file.
 
 Refer docstrings in the above mentioned files.
+
+***Submission***
+
+For submitting your work, follow these steps:-
+
+Push the codes in your personal Github Repo (Make sure it's public repository)
+
+Put the screenshots of the running application inside the images folder
+
+Share the link of your Github repo with Recruiter/HR Executive
