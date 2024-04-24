@@ -11,6 +11,11 @@ services:
       - ./data/mongodb:/data/db
     command: --smallfiles
 
+  # Redis service for Celery
+  redis:
+    image: "redis:latest"
+
+
   # web service for flask application
   web:
     build:

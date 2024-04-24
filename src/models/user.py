@@ -1,5 +1,5 @@
-from mongoengine import Document
-
+from mongoengine import Document, StringField, EmailField, BinaryField
+import bcrypt
 
 class User(Document):
     """
@@ -9,4 +9,15 @@ class User(Document):
     HINT: Do not store password as is.
     """
 
-    pass
+    username = StringField(required=True, unique=True)
+    email = EmailField(required=True, unique=True)
+    password_hash = BinaryField(required=True)
+
+    @staticmethod
+    def hash_password(password):
+        salt = bcrypt.gensalt()
+        return bcrypt.hashpw(password.encode('utf-8'), salt)
+
+    def set_password(self, password):
+        self.password_hash = self.hash_password(password)
+
